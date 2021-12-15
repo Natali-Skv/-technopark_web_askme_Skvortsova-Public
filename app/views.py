@@ -83,7 +83,7 @@ def hot_questions(request):
     paginator = Paginator(questions, 5)
     page = request.GET.get('page')
     curr_questions = paginator.get_page(page)
-    return render(request, 'index.html', {'is_auth': True,
+    return render(request, 'hot_questions.html', {'is_auth': True,
                                           'user': user,
                                           'questions': curr_questions,
                                           'popular_tags': popular_tags,
@@ -91,6 +91,18 @@ def hot_questions(request):
                                           'paginated_elements': curr_questions
                                           })
 
+
+def new_questions(request):
+    paginator = Paginator(questions, 5)
+    page = request.GET.get('page')
+    curr_questions = paginator.get_page(page)
+    return render(request, 'index.html', {'is_auth': True,
+                                          'user': user,
+                                          'questions': curr_questions,
+                                          'popular_tags': popular_tags,
+                                          'best_members': best_members,
+                                          'paginated_elements': curr_questions
+                                          })
 
 answers = [
     {
