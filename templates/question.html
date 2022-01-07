@@ -42,6 +42,14 @@
         </div>
     </div>
     <hr>
+    <div class="m-20px">
+        <form class="was-validated">
+            <textarea rows="5" class="form-control m-0 is-invalid" id="input-answer" placeholder="enter your answer here..."
+                      maxlength="300" title="maximum length 300 characters, the answer cannot be empty"
+                      required></textarea>
+            <button class="btn my-btn link mt-2 mb-5 border-3" type="submit">Answer!</button>
+        </form>
+    </div>
     <hr>
     {% for answer in answers %}
         {% include 'include/answer.html' %}
